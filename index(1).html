@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0b">
+<meta name="description" content="REDFORM은 익숙한 것을 다시 생각해 더 나은 제품과 사용방법을 만드는 Product System Brand입니다.">
+<title>REDFORM — Rethink. Reform. Rise.</title>
+<style>
+:root{
+  --bg:#0b0b0b; --bg2:#111; --paper:#f5f2ec; --ink:#101010;
+  --red:#E5222A; --red2:#9d0d13; --white:#fff; --muted:#aaa; --line:rgba(255,255,255,.13);
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:#fff;
+  font-family:Inter, Pretendard, "Noto Sans KR", Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+.nav{
+  position:fixed;z-index:50;inset:0 0 auto 0;
+  background:rgba(11,11,11,.72);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)
+}
+.nav-in{height:70px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;letter-spacing:.24em;font-size:16px}
+.logo span{color:var(--red)}
+.nav-links{display:flex;gap:26px;color:#c8c8c8;font-size:12px;letter-spacing:.08em}
+.nav-links a:hover{color:#fff}
+.hero{padding:118px 0 78px;min-height:100vh;display:grid;align-items:center;overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;width:640px;height:640px;right:-160px;top:70px;background:radial-gradient(circle,rgba(229,34,42,.26),transparent 66%);filter:blur(10px)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center}
+.kicker{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#8d8d8d}
+h1{font-size:clamp(54px,7vw,108px);line-height:.9;letter-spacing:-.055em;margin:18px 0 24px}
+h1 .accent{color:var(--red)}
+.hero p{font-size:18px;line-height:1.72;color:#c2c2c2;max-width:620px}
+.hero p strong{color:#fff}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:999px;font-size:13px;font-weight:800}
+.btn.primary{background:#fff;color:#111}
+.btn.ghost{border:1px solid rgba(255,255,255,.2)}
+.hero-art{position:relative}
+.hero-art img{border-radius:28px;box-shadow:0 40px 90px rgba(0,0,0,.46);border:1px solid rgba(255,255,255,.1)}
+.section{padding:108px 0;border-top:1px solid var(--line)}
+.section.light{background:var(--paper);color:var(--ink);border-top:0}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#7d7d7d}
+.section h2{font-size:clamp(38px,5vw,72px);line-height:.98;letter-spacing:-.05em;margin:16px 0 18px}
+.lead{font-size:18px;line-height:1.75;color:#aaa;max-width:780px}
+.light .lead{color:#666}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px}
+.big{font-size:clamp(30px,4vw,54px);line-height:1.12;letter-spacing:-.04em;font-weight:850}
+.big em{font-style:normal;color:var(--red)}
+.rules{margin-top:40px;border-top:1px solid rgba(0,0,0,.15)}
+.rule{display:grid;grid-template-columns:54px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid rgba(0,0,0,.12)}
+.rule b{color:var(--red)}
+.rule h3{margin:0 0 6px;font-size:17px}
+.rule p{margin:0;color:#676767;line-height:1.6;font-size:14px}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.project{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#101010;transition:.3s}
+.project:hover{transform:translateY(-7px);border-color:rgba(255,255,255,.28)}
+.project img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.project-copy{padding:20px 20px 24px}
+.project-copy small{font-size:10px;letter-spacing:.18em;color:#8d8d8d}
+.project-copy h3{margin:8px 0 8px;font-size:24px}
+.project-copy p{margin:0;color:#aaa;font-size:13px;line-height:1.6}
+.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.steps{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:42px 1fr;gap:16px;align-items:center;border:1px solid rgba(0,0,0,.12);border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.45)}
+.step i{width:34px;height:34px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:800}
+.step b{display:block;font-size:15px}.step span{display:block;color:#777;font-size:12px;margin-top:3px}
+.manifesto{padding:130px 0;background:linear-gradient(135deg,#7d0b10,var(--red) 48%,#770a0f)}
+.manifesto-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:end}
+.manifesto h2{font-size:clamp(48px,7vw,100px);line-height:.9;letter-spacing:-.055em;margin:0}
+.manifesto p{margin:0;color:rgba(255,255,255,.82);font-size:17px;line-height:1.75}
+.contact{padding:108px 0}
+.contact-box{border:1px solid var(--line);border-radius:24px;padding:34px;display:grid;grid-template-columns:1fr .9fr;gap:34px;align-items:start}
+.contact h2{font-size:clamp(38px,4vw,58px);margin:0 0 10px;letter-spacing:-.04em}
+.contact p{color:#999;line-height:1.65}
+.form{display:grid;gap:12px}
+.form input,.form textarea,.form select{
+  width:100%;background:#121212;color:#fff;border:1px solid rgba(255,255,255,.16);
+  border-radius:12px;padding:14px 14px;font:inherit
+}
+.form textarea{min-height:130px;resize:vertical}
+.form button{border:0;background:var(--red);color:#fff;font-weight:800;border-radius:12px;padding:15px;cursor:pointer}
+.form button:hover{filter:brightness(1.08)}
+.form-note{font-size:11px;color:#777;margin-top:8px}
+.signature{padding:54px 0 76px;text-align:center;border-top:1px solid var(--line)}
+.signature strong{display:block;font-size:20px;letter-spacing:.08em}
+.signature span{display:block;color:#777;margin-top:10px;font-size:12px}
+footer{padding:26px 0 38px;color:#666;font-size:11px}
+.fade{opacity:0;transform:translateY(20px);transition:.75s ease}
+.fade.show{opacity:1;transform:none}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero-grid,.about-grid,.lab-grid,.manifesto-grid,.contact-box{grid-template-columns:1fr}
+  .hero-grid{gap:32px}
+  .projects{grid-template-columns:1fr}
+  .hero{min-height:auto}
+}
+@media(max-width:560px){
+  .wrap{width:min(var(--max),calc(100% - 24px))}
+  .hero{padding-top:100px}
+  .section{padding:78px 0}
+  .hero p,.lead{font-size:16px}
+  .contact-box{padding:24px}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top"><span>RED</span>FORM</a>
+    <nav class="nav-links">
+      <a href="#about">ABOUT</a><a href="#projects">PROJECTS</a><a href="#lab">LAB</a><a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="fade">
+        <div class="kicker">Product System Brand</div>
+        <h1>WE REFORM<br><span class="accent">THE ORDINARY.</span></h1>
+        <p><strong>익숙한 것을 다시 생각하고, 더 나은 쓰임으로 다시 만듭니다.</strong><br>REDFORM은 기존 제품과 기술을 새롭게 연결해 더 편리하고 더 나은 사용 경험을 설계합니다.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">프로젝트 보기 →</a>
+          <a class="btn ghost" href="#about">RETHINK. REFORM. RISE.</a>
+        </div>
+      </div>
+      <div class="hero-art fade"><img src="assets/hero.webp" alt="REDFORM emblem"></div>
+    </div>
+  </section>
+
+  <section id="about" class="section light">
+    <div class="wrap about-grid">
+      <div>
+        <div class="eyebrow">ABOUT REDFORM</div>
+        <h2>제품보다<br>쓰임을 봅니다.</h2>
+      </div>
+      <div>
+        <div class="big">“이미 있는 것”을 포기하지 않습니다.<br>더 좋은 조합과 <em>더 나은 방법</em>을 찾습니다.</div>
+        <div class="rules">
+          <div class="rule"><b>01</b><div><h3>RETHINK</h3><p>당연하게 받아들인 불편을 다시 발견합니다.</p></div></div>
+          <div class="rule"><b>02</b><div><h3>CONNECT</h3><p>기존 제품·기술·재료를 새롭게 연결합니다.</p></div></div>
+          <div class="rule"><b>03</b><div><h3>REFORM</h3><p>사용하기 쉬운 구조와 형태로 다시 만듭니다.</p></div></div>
+          <div class="rule"><b>04</b><div><h3>VALIDATE</h3><p>실제 사용과 시장 반응으로 검증합니다.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="wrap">
+      <div class="eyebrow">PROJECTS</div>
+      <h2 class="fade">One brand.<br>Different problems.</h2>
+      <p class="lead fade">REDFORM이 현재 개발하고 있는 대표 프로젝트입니다. 서로 다른 분야라도 “실제 사용을 더 좋게 만드는가?”라는 같은 기준으로 검증합니다.</p>
+      <div class="projects">
+        <article class="project fade">
+          <img src="assets/g01.webp" alt="G-01 Modular Gaming Case System">
+          <div class="project-copy"><small>GAMING · MOBILITY</small><h3>G-01</h3><p>키보드·마우스·케이스·데스크매트·케어 기능을 하나의 휴대형 게이밍 시스템으로 재구성합니다.</p></div>
+        </article>
+        <article class="project fade">
+          <img src="assets/car-reset.webp" alt="CAR RESET V1">
+          <div class="project-copy"><small>AUTOMOTIVE · DAILY CARE</small><h3>CAR RESET V1</h3><p>청소도구 묶음이 아니라 5분 안에 차량 공간을 다시 정돈하는 사용 경험을 설계합니다.</p></div>
+        </article>
+        <article class="project fade">
+          <img src="assets/wear-module.webp" alt="REDFORM Wear Module">
+          <div class="project-copy"><small>WEARABLE · MODULAR</small><h3>WEAR MODULE</h3><p>휴대폰·펜·카드·소형 도구를 필요할 때 붙이고 뗄 수 있는 공통 모듈 시스템입니다.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="lab" class="section light">
+    <div class="wrap lab-grid">
+      <div>
+        <div class="eyebrow">REDFORM LAB</div>
+        <h2>아이디어를<br>검증 가능한 제품으로.</h2>
+        <p class="lead">아이디어에서 조사, 시제품, 테스트, 개선까지. 제품이 만들어지는 전 과정을 기록하고 검증합니다.</p>
+      </div>
+      <div class="steps fade">
+        <div class="step"><i>01</i><div><b>IDEA</b><span>반복되는 실제 불편을 정의</span></div></div>
+        <div class="step"><i>02</i><div><b>RESEARCH</b><span>시장·기존 대안·기술 조사</span></div></div>
+        <div class="step"><i>03</i><div><b>PROTOTYPE</b><span>핵심 기능을 작게 구현</span></div></div>
+        <div class="step"><i>04</i><div><b>TEST</b><span>실제 사용성과 반응 검증</span></div></div>
+        <div class="step"><i>05</i><div><b>REFORM</b><span>실패를 반영해 다시 설계</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto">
+    <div class="wrap manifesto-grid">
+      <h2 class="fade">A DROP<br>IS NOT<br>THE END.</h2>
+      <p class="fade">오르고, 내려오고, 다시 오릅니다. REDFORM은 실패와 하강을 숨기지 않습니다. 그 경험을 다음 도약의 구조로 바꾸고, 이전보다 더 높은 단계로 올라가는 움직임을 설계합니다.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-box">
+      <div>
+        <div class="eyebrow">CONTACT</div>
+        <h2>Build something<br>better with us.</h2>
+        <p>제품개발, 제조/OEM, 협업, 유통 제안을 기다립니다.</p>
+      </div>
+      <form class="form" id="contactForm">
+        <select id="kind" required>
+          <option value="">문의 유형 선택</option>
+          <option>제품개발 문의</option>
+          <option>제조 / OEM 문의</option>
+          <option>협업 / 유통 문의</option>
+          <option>기타 문의</option>
+        </select>
+        <input id="name" type="text" placeholder="이름" required>
+        <input id="email" type="email" placeholder="이메일" required>
+        <textarea id="message" placeholder="문의 내용을 입력해 주세요." required></textarea>
+        <button type="submit">문의 보내기</button>
+        <div class="form-note">현재는 이메일 앱을 열어 문의 내용을 전달하는 방식입니다.</div>
+      </form>
+    </div>
+  </section>
+
+  <section class="signature">
+    <div class="wrap">
+      <strong>RETHINK. REFORM. RISE.</strong>
+      <span>REDFORM · redform.kr</span>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 REDFORM. All rights reserved.</div></footer>
+
+<script>
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.12});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const kind=document.getElementById('kind').value;
+  const name=document.getElementById('name').value;
+  const email=document.getElementById('email').value;
+  const message=document.getElementById('message').value;
+  const subject=encodeURIComponent('[REDFORM 문의] '+kind+' - '+name);
+  const body=encodeURIComponent('문의 유형: '+kind+'\n이름: '+name+'\n회신 이메일: '+email+'\n\n문의 내용:\n'+message);
+  window.location.href='mailto:redform.kr@gmail.com?subject='+subject+'&body='+body;
+});
+</script>
+</body>
+</html>
